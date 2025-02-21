@@ -1,0 +1,56 @@
+[gd_scene load_steps=6 format=3 uid="uid://2ypkhd55vrxf"]
+
+[ext_resource type="PackedScene" uid="uid://cikwbm6f8snq0" path="res://player.tscn" id="1_e4g6n"]
+[ext_resource type="PackedScene" uid="uid://cxq1n6084mkhp" path="res://level design scenes/platform.tscn" id="2_tcy12"]
+[ext_resource type="PackedScene" uid="uid://cdnjtj37kkahe" path="res://level design scenes/door.tscn" id="3_ntxgr"]
+[ext_resource type="Script" path="res://scripts/GameManager.gd" id="4_8x517"]
+[ext_resource type="Texture2D" uid="uid://bb4xi1u3x6ty7" path="res://level0+1.png" id="5_u7edo"]
+
+[node name="level1" type="Node2D"]
+
+[node name="Player" parent="." groups=["players"] instance=ExtResource("1_e4g6n")]
+position = Vector2(92, 268)
+
+[node name="Level0+1" type="Sprite2D" parent="Player"]
+z_index = -1
+position = Vector2(-0.499994, 0.500001)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("5_u7edo")
+
+[node name="Door" parent="." groups=["doors"] instance=ExtResource("3_ntxgr")]
+position = Vector2(1031, 192)
+
+[node name="Door2" parent="." groups=["doors"] instance=ExtResource("3_ntxgr")]
+position = Vector2(476, 400)
+
+[node name="platform" parent="." instance=ExtResource("2_tcy12")]
+position = Vector2(93, 400)
+
+[node name="platform5" parent="." instance=ExtResource("2_tcy12")]
+position = Vector2(574, 471)
+scale = Vector2(8.74457, 1.78759)
+
+[node name="platform4" parent="." instance=ExtResource("2_tcy12")]
+position = Vector2(2, 282)
+rotation = 1.5708
+scale = Vector2(4.96748, 1.0084)
+
+[node name="platform6" parent="." instance=ExtResource("2_tcy12")]
+position = Vector2(1153, 282)
+rotation = 1.5708
+scale = Vector2(4.96748, 1.0084)
+
+[node name="platform2" parent="." instance=ExtResource("2_tcy12")]
+position = Vector2(578, 322)
+
+[node name="platform7" parent="." instance=ExtResource("2_tcy12")]
+position = Vector2(821, 291)
+
+[node name="platform8" parent="." instance=ExtResource("2_tcy12")]
+position = Vector2(1028, 258)
+
+[node name="platform3" parent="." instance=ExtResource("2_tcy12")]
+position = Vector2(329, 361)
+
+[node name="GameManager" type="Node" parent="."]
+script = ExtResource("4_8x517")

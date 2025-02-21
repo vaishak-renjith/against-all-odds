@@ -1,0 +1,8 @@
+[gd_scene load_steps=3 format=3 uid="uid://bqdgeo4cgdahg"]
+
+[ext_resource type="Texture2D" uid="uid://b0j3xqxjg58aw" path="res://art/plat.png" id="1_xox0l"]
+[ext_resource type="Script" path="res://scripts/movingplat.gd" id="2_1o4ln"]
+
+[node name="Node2D" type="Sprite2D"]
+texture = ExtResource("1_xox0l")
+script = ExtResource("2_1o4ln")

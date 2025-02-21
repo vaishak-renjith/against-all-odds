@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://nr3bpuhqu8t8"]
+
+[ext_resource type="Texture2D" uid="uid://bmjycrmyiuuvq" path="res://art/enemysprites.png" id="1_0fmfy"]
+[ext_resource type="Script" path="res://enemy.gd" id="1_c3edi"]
+[ext_resource type="Script" path="res://EnemyStateMachine.gd" id="3_4o58m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lwyb0"]
+atlas = ExtResource("1_0fmfy")
+region = Rect2(0, 0, 95, 85)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rdjum"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lwyb0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="Node2D"]
+script = ExtResource("1_c3edi")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_rdjum")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+
+[node name="StateMachine" type="Node" parent="."]
+script = ExtResource("3_4o58m")

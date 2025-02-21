@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=3 uid="uid://2ypkhd55vrxf"]
+
+[ext_resource type="PackedScene" uid="uid://nr3bpuhqu8t8" path="res://enemy.tscn" id="1_0y6e4"]
+[ext_resource type="PackedScene" uid="uid://cikwbm6f8snq0" path="res://player.tscn" id="1_e4g6n"]
+[ext_resource type="PackedScene" uid="uid://cxq1n6084mkhp" path="res://platform.tscn" id="2_tcy12"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Enemy" parent="." instance=ExtResource("1_0y6e4")]
+position = Vector2(1040, 189)
+metadata/Player = NodePath("../Player")
+
+[node name="Player" parent="." instance=ExtResource("1_e4g6n")]
+position = Vector2(87, 269)
+
+[node name="platform" parent="." instance=ExtResource("2_tcy12")]
+position = Vector2(93, 400)
+
+[node name="platform5" parent="." instance=ExtResource("2_tcy12")]
+position = Vector2(574, 471)
+scale = Vector2(8.74457, 1.78759)
+
+[node name="platform4" parent="." instance=ExtResource("2_tcy12")]
+position = Vector2(2, 282)
+rotation = 1.5708
+scale = Vector2(4.96748, 1.0084)
+
+[node name="platform6" parent="." instance=ExtResource("2_tcy12")]
+position = Vector2(1153, 282)
+rotation = 1.5708
+scale = Vector2(4.96748, 1.0084)
+
+[node name="platform2" parent="." instance=ExtResource("2_tcy12")]
+position = Vector2(578, 322)
+
+[node name="platform7" parent="." instance=ExtResource("2_tcy12")]
+position = Vector2(821, 291)
+
+[node name="platform8" parent="." instance=ExtResource("2_tcy12")]
+position = Vector2(1028, 258)
+
+[node name="platform3" parent="." instance=ExtResource("2_tcy12")]
+position = Vector2(329, 361)

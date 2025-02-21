@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://cdnjtj37kkahe"]
+
+[ext_resource type="Texture2D" uid="uid://bs3k4ism3ruvw" path="res://art/door/tile000-ezgif.com-crop.png" id="1_no6at"]
+[ext_resource type="Texture2D" uid="uid://bexfke1gqrpcp" path="res://art/door/tile002-ezgif.com-crop.png" id="2_2nye6"]
+[ext_resource type="Script" path="res://scripts/door.gd" id="3_bfl58"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wo17l"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_no6at")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_no6at")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2nye6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_no6at")
+}],
+"loop": false,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
+[node name="Door" type="AnimatedSprite2D"]
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_wo17l")
+frame_progress = 0.125543
+script = ExtResource("3_bfl58")
+
+[node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+position = Vector2(0.100001, 0.2)
+scale = Vector2(1.11, 1.15)
+
+[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
+[connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

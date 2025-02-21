@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dw3xtb0sarcd5"]
+
+[ext_resource type="Texture2D" uid="uid://b0j3xqxjg58aw" path="res://art/plat.png" id="1_oklaw"]
+[ext_resource type="Script" path="res://scripts/toggleable_door.gd" id="2_2wad1"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_imhpx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lksqw"]
+size = Vector2(168, 16.0003)
+
+[node name="Toggleable Door" type="StaticBody2D"]
+material = SubResource("CanvasItemMaterial_imhpx")
+rotation = 1.5708
+script = ExtResource("2_2wad1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(3.83114e-06, 0.000150442)
+shape = SubResource("RectangleShape2D_lksqw")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_oklaw")
