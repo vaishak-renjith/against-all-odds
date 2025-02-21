@@ -4,13 +4,11 @@ class_name Player
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const DASH_SPEED = 2000
-var cur_level = 1
 
 var is_dashing = false
 var can_dash = true
 var dash_time = 1
 var dash_cooldown = 0.5
-
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -22,20 +20,48 @@ const lines : Array[String] = [
 ]
 
 func _input(event):
+	if DialogueManager.isDialogueActive:
+		return
 	if Input.is_key_pressed(KEY_Z):
 		# play some animation
 		print("Z pressed")
 		if (levelWin()):
+			print("BEFORE ", GameManager.cur_level)
+			GameManager.cur_level = GameManager.cur_level + 1
+			print("AFTER ", GameManager.cur_level)
 			print("Level cleared!")
-			get_tree().change_scene_to_file("res://level2.tscn")
+			if (GameManager.cur_level < 4):
+				for node in get_tree().get_nodes_in_group("clones"):
+					node.queue_free()
+				get_tree().change_scene_to_file("res://level"+str(GameManager.cur_level)+".tscn")
 		
 		print(global_position.x, global_position.y)
 	if Input.is_key_pressed(KEY_X):
 		DialogueManager.start_dialogue(global_position, lines)
+		
+	if Input.is_key_pressed(KEY_R):
+		for node in get_tree().get_nodes_in_group("clones"):
+			node.queue_free()
+		get_tree().change_scene_to_file("res://level" + str(GameManager.cur_level) + ".tscn")
+		
+	if Input.is_key_pressed(KEY_C):
+		clone()
+
+func clone():
+	#to-do: add timer and limit on how many clones you can place
+	var scene = load("res://clone.tscn")
+	var scene_instance = scene.instantiate()
+	scene_instance.global_position = global_position
+	print(scene_instance.global_position, global_position)
+	scene_instance.modulate.a = 0.5
+	scene_instance.play("default")
+	scene_instance.add_to_group("clones")
+	get_tree().root.add_child(scene_instance)
+	
 
 func levelWin():
 	for door in get_tree().get_nodes_in_group("doors"):
-		door.play("new_animation")
+		door.get_child(0).play("new_animation")
 	for door in get_tree().get_nodes_in_group("doors"):
 		if (!door.isViewable):
 			return false

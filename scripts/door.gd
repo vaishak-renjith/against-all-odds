@@ -1,7 +1,8 @@
-extends AnimatedSprite2D
+extends StaticBody2D
 
 @onready var visibility_notifier = $VisibileOnScreenNotifier2D 
 var isViewable : bool = false
+var isViewedByClone : bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -17,5 +18,7 @@ func _on_visible_on_screen_notifier_2d_screen_entered():
 	isViewable = true
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
+	if isViewedByClone:
+		return
 	print("door out of sight")
 	isViewable = false

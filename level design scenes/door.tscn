@@ -1,14 +1,18 @@
-[gd_scene load_steps=5 format=3 uid="uid://cdnjtj37kkahe"]
+[gd_scene load_steps=7 format=3 uid="uid://cdnjtj37kkahe"]
 
 [ext_resource type="Texture2D" uid="uid://bs3k4ism3ruvw" path="res://art/door/tile000-ezgif.com-crop.png" id="1_no6at"]
-[ext_resource type="Texture2D" uid="uid://bexfke1gqrpcp" path="res://art/door/tile002-ezgif.com-crop.png" id="2_2nye6"]
+[ext_resource type="Texture2D" uid="uid://bdwltkhbn1lrf" path="res://art/door/tile001-ezgif.com-crop.png" id="3_0edwe"]
 [ext_resource type="Script" path="res://scripts/door.gd" id="3_bfl58"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_wo17l"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_lq6lf"]
+atlas = ExtResource("1_no6at")
+region = Rect2(0, 0, 24, 25)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_riyal"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_no6at")
+"texture": SubResource("AtlasTexture_lq6lf")
 }],
 "loop": true,
 "name": &"default",
@@ -16,10 +20,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_no6at")
-}, {
-"duration": 1.0,
-"texture": ExtResource("2_2nye6")
+"texture": ExtResource("3_0edwe")
 }, {
 "duration": 1.0,
 "texture": ExtResource("1_no6at")
@@ -29,15 +30,27 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Door" type="AnimatedSprite2D"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2ct5k"]
+size = Vector2(22.4, 23.2)
+
+[node name="Door" type="StaticBody2D"]
 scale = Vector2(5, 5)
-sprite_frames = SubResource("SpriteFrames_wo17l")
-frame_progress = 0.125543
 script = ExtResource("3_bfl58")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(1, 1)
+sprite_frames = SubResource("SpriteFrames_riyal")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(0.100001, 0.2)
 scale = Vector2(1.11, 1.15)
+
+[node name="Area2D" type="Area2D" parent="."]
+scale = Vector2(1, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(4.76837e-07, 0.2)
+shape = SubResource("RectangleShape2D_2ct5k")
 
 [connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

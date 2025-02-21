@@ -5,12 +5,16 @@ class_name PlayerMove
 var direction : float
 
 func Enter():
+	if DialogueManager.isDialogueActive:
+		return
 	Player.get_child(0).play("dinger_walk")
 
 func Update(_delta : float):
 	pass
 
 func Physics_Update(_delta : float):
+	if DialogueManager.isDialogueActive:
+		return
 	direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
 		Player.velocity.x = direction * Player.SPEED

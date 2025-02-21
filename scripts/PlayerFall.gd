@@ -6,9 +6,13 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var direction
 	
 func Enter():
+	if DialogueManager.isDialogueActive:
+		return
 	Player.get_child(0).play("dinger_fall")
 
 func Physics_Update(_delta : float):
+	if DialogueManager.isDialogueActive:
+		return
 	direction = Input.get_axis("ui_left", "ui_right")
 	if direction:
 		Player.velocity.x = direction * Player.SPEED * 0.75
