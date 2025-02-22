@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://cikwbm6f8snq0"]
+[gd_scene load_steps=26 format=3 uid="uid://cikwbm6f8snq0"]
 
 [ext_resource type="Script" path="res://scripts/PlayerEngine.gd" id="1_4mqlj"]
 [ext_resource type="Texture2D" uid="uid://wwkihits853p" path="res://art/dinger/dinger.png" id="2_3wdlg"]
@@ -7,8 +7,9 @@
 [ext_resource type="Script" path="res://scripts/PlayerMove.gd" id="4_0jfnu"]
 [ext_resource type="Script" path="res://scripts/PlayerIdle.gd" id="4_h5344"]
 [ext_resource type="Script" path="res://scripts/PlayerFall.gd" id="6_jqk27"]
-[ext_resource type="Script" path="res://PlayerDash.gd" id="9_308si"]
+[ext_resource type="Script" path="res://scripts/PlayerDash.gd" id="9_308si"]
 [ext_resource type="Script" path="res://scripts/Camera2D.gd" id="9_eh782"]
+[ext_resource type="PackedScene" uid="uid://bvjk1dj5du4f4" path="res://UI.tscn" id="10_qojto"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_acl86"]
 atlas = ExtResource("2_3wdlg")
@@ -128,16 +129,16 @@ size = Vector2(16, 16)
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_ilmqr"]
 
 [node name="Player" type="CharacterBody2D"]
-scale = Vector2(4, 4)
+scale = Vector2(5, 5)
 script = ExtResource("1_4mqlj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 z_index = 7
-scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_pht7v")
 animation = &"dinger_fall"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.5, 0.5)
 shape = SubResource("RectangleShape2D_uyrj0")
 
 [node name="StateMachine" type="Node" parent="." node_paths=PackedStringArray("initial_state")]
@@ -167,12 +168,16 @@ Player = NodePath("../..")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-0.5, 0.5)
 scale = Vector2(0.25, 0.25)
-zoom = Vector2(2, 2)
+zoom = Vector2(8, 8)
 script = ExtResource("9_eh782")
 
 [node name="DashTimer" type="Timer" parent="."]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 physics_material_override = SubResource("PhysicsMaterial_ilmqr")
+
+[node name="UI" parent="." instance=ExtResource("10_qojto")]
+position = Vector2(-44.75, -37.25)
+scale = Vector2(0.18, 0.18)
 
 [connection signal="timeout" from="DashTimer" to="." method="_on_dash_timer_timeout"]

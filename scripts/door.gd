@@ -1,4 +1,4 @@
-extends StaticBody2D
+extends Toggleable
 
 @onready var visibility_notifier = $VisibileOnScreenNotifier2D 
 var isViewable : bool = false

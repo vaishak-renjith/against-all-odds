@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bvjk1dj5du4f4"]
+[gd_scene load_steps=11 format=3 uid="uid://bvjk1dj5du4f4"]
 
 [ext_resource type="Texture2D" uid="uid://c15f2b25rwr7q" path="res://art/charms/seperatecharms/charm000.png" id="1_58hlh"]
 [ext_resource type="Texture2D" uid="uid://d0oxpb2ki3r6m" path="res://art/charms/seperatecharms/charm001.png" id="2_3vitp"]
@@ -8,16 +8,19 @@
 [ext_resource type="Texture2D" uid="uid://dkn3x1elioh7" path="res://art/charms/seperatecharms/charm005.png" id="6_7vmen"]
 [ext_resource type="Texture2D" uid="uid://n5tyxjytgepl" path="res://art/charms/seperatecharms/charm006.png" id="7_o16ts"]
 [ext_resource type="Texture2D" uid="uid://bg3yhv3dexvhg" path="res://art/charms/seperatecharms/charm007.png" id="8_2rem1"]
+[ext_resource type="Texture2D" uid="uid://btkvsay84nxnh" path="res://art/golddoor/small_door.png" id="9_4sw4x"]
+[ext_resource type="FontFile" uid="uid://bv1m5memacnfj" path="res://Silkscreen/slkscr.ttf" id="10_wyjko"]
 
 [node name="Node2D" type="Node2D"]
+position = Vector2(-178, 0)
 
 [node name="charm1" type="Sprite2D" parent="."]
-position = Vector2(-142, -1)
+position = Vector2(-141, 0)
 scale = Vector2(4, 4)
 texture = ExtResource("1_58hlh")
 
 [node name="charm2" type="Sprite2D" parent="."]
-position = Vector2(-108, -1)
+position = Vector2(-108, 0)
 scale = Vector2(4, 4)
 texture = ExtResource("2_3vitp")
 
@@ -27,17 +30,17 @@ scale = Vector2(4, 4)
 texture = ExtResource("3_4wihl")
 
 [node name="charm4" type="Sprite2D" parent="."]
-position = Vector2(62, -1)
+position = Vector2(64, 0)
 scale = Vector2(4, 4)
 texture = ExtResource("4_7jbgx")
 
 [node name="charm5" type="Sprite2D" parent="."]
-position = Vector2(27, 0)
+position = Vector2(28, 0)
 scale = Vector2(4, 4)
 texture = ExtResource("5_jvlp3")
 
 [node name="charm6" type="Sprite2D" parent="."]
-position = Vector2(-40, 0)
+position = Vector2(-39, 0)
 scale = Vector2(4, 4)
 texture = ExtResource("6_7vmen")
 
@@ -47,6 +50,26 @@ scale = Vector2(4, 4)
 texture = ExtResource("7_o16ts")
 
 [node name="charm8" type="Sprite2D" parent="."]
-position = Vector2(96, -1)
+position = Vector2(100, 0)
 scale = Vector2(4, 4)
 texture = ExtResource("8_2rem1")
+
+[node name="doors" type="Sprite2D" parent="."]
+position = Vector2(499, 0)
+scale = Vector2(4, 4)
+texture = ExtResource("9_4sw4x")
+
+[node name="Label" type="Label" parent="doors"]
+anchors_preset = -1
+anchor_left = 0.0208333
+anchor_top = 0.02
+anchor_right = 0.979167
+anchor_bottom = 0.14
+offset_left = 6.83333
+offset_top = -4.16
+offset_right = 60.8333
+offset_bottom = 27.84
+theme_override_fonts/font = ExtResource("10_wyjko")
+theme_override_font_sizes/font_size = 10
+text = "asd"
+metadata/_edit_use_anchors_ = true

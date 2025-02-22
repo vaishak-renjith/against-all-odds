@@ -2,8 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://103d7u3oj20g" path="res://art/textbox.png" id="1_tgmdn"]
 [ext_resource type="Script" path="res://scripts/textbox.gd" id="1_w201h"]
-
-[sub_resource type="SystemFont" id="SystemFont_v02se"]
+[ext_resource type="FontFile" uid="uid://bv1m5memacnfj" path="res://Silkscreen/slkscr.ttf" id="3_3pgpi"]
 
 [node name="textbox" type="MarginContainer"]
 offset_right = 16.0
@@ -29,7 +28,9 @@ theme_override_constants/margin_bottom = 3
 [node name="Label" type="Label" parent="MarginContainer"]
 layout_mode = 2
 theme_override_colors/font_color = Color(0, 0, 0, 1)
-theme_override_fonts/font = SubResource("SystemFont_v02se")
+theme_override_fonts/font = ExtResource("3_3pgpi")
+theme_override_font_sizes/font_size = 14
+text = "dsfasdfa"
 vertical_alignment = 1
 
 [node name="LetterDisplayTimer" type="Timer" parent="."]

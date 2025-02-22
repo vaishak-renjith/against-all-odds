@@ -1,8 +1,8 @@
 extends CharacterBody2D
 class_name Player
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+const SPEED = 150.0
+const JUMP_VELOCITY = -300.0
 const DASH_SPEED = 2000
 
 var is_dashing = false
@@ -11,7 +11,7 @@ var dash_time = 1
 var dash_cooldown = 0.5
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 0.8
 var can_double_jump = true
 
 const lines : Array[String] = [
@@ -66,15 +66,22 @@ func levelWin():
 		if (!door.isViewable):
 			return false
 	return true
+	
+func _process(delta):
+	var doors = 0
+	for door in get_tree().get_nodes_in_group("doors"):
+		if (door.isViewable):
+			doors += 1
+	get_child(6).get_child(8).get_child(0).text = str(doors) + "/" + str(get_tree().get_nodes_in_group("doors").size())
 		
 func _physics_process(delta):
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		var collision_block = collision.get_collider()
 		if collision_block.is_in_group("Blocks"):
+			print("hi")
 			collision_block.apply_central_impulse(collision.get_normal() * -1.1)
 	move_and_slide()
-
 
 func _on_dash_timer_timeout():
 	can_dash = true

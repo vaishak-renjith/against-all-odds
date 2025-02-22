@@ -29,8 +29,8 @@ func displayText(textToDisplay : String):
 	
 	print(global_position.x, global_position.y)
 	
-	global_position.x -= size.x / 2
-	global_position.y -= size.y + 30
+	global_position.x -= size.x / 8
+	global_position.y -= size.y - 15
 	
 	print(global_position.x, global_position.y)
 	

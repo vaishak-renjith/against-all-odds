@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://wn8emjgtvdda"]
 
 [ext_resource type="Texture2D" uid="uid://wwkihits853p" path="res://art/dinger/dinger.png" id="1_n1qlf"]
-[ext_resource type="Script" path="res://cloneviewarea.gd" id="2_65nl5"]
+[ext_resource type="Script" path="res://scripts/cloneviewarea.gd" id="2_65nl5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5j2po"]
 atlas = ExtResource("1_n1qlf")
@@ -29,7 +29,6 @@ animations = [{
 size = Vector2(63.5, 41.375)
 
 [node name="Node2D" type="AnimatedSprite2D"]
-scale = Vector2(8, 8)
 sprite_frames = SubResource("SpriteFrames_m45qq")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
