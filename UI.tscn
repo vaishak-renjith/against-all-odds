@@ -12,50 +12,50 @@
 [ext_resource type="FontFile" uid="uid://bv1m5memacnfj" path="res://Silkscreen/slkscr.ttf" id="10_wyjko"]
 
 [node name="Node2D" type="Node2D"]
-position = Vector2(-178, 0)
+position = Vector2(-430, 0)
 
 [node name="charm1" type="Sprite2D" parent="."]
-position = Vector2(-141, 0)
+position = Vector2(-385, -106)
 scale = Vector2(4, 4)
 texture = ExtResource("1_58hlh")
 
 [node name="charm2" type="Sprite2D" parent="."]
-position = Vector2(-108, 0)
+position = Vector2(-352, -106)
 scale = Vector2(4, 4)
 texture = ExtResource("2_3vitp")
 
 [node name="charm3" type="Sprite2D" parent="."]
-position = Vector2(-74, 0)
+position = Vector2(-318, -106)
 scale = Vector2(4, 4)
 texture = ExtResource("3_4wihl")
 
 [node name="charm4" type="Sprite2D" parent="."]
-position = Vector2(64, 0)
+position = Vector2(-180, -106)
 scale = Vector2(4, 4)
 texture = ExtResource("4_7jbgx")
 
 [node name="charm5" type="Sprite2D" parent="."]
-position = Vector2(28, 0)
+position = Vector2(-216, -106)
 scale = Vector2(4, 4)
 texture = ExtResource("5_jvlp3")
 
 [node name="charm6" type="Sprite2D" parent="."]
-position = Vector2(-39, 0)
+position = Vector2(-283, -106)
 scale = Vector2(4, 4)
 texture = ExtResource("6_7vmen")
 
 [node name="charm7" type="Sprite2D" parent="."]
-position = Vector2(-6, 0)
+position = Vector2(-250, -106)
 scale = Vector2(4, 4)
 texture = ExtResource("7_o16ts")
 
 [node name="charm8" type="Sprite2D" parent="."]
-position = Vector2(100, 0)
+position = Vector2(-144, -106)
 scale = Vector2(4, 4)
 texture = ExtResource("8_2rem1")
 
 [node name="doors" type="Sprite2D" parent="."]
-position = Vector2(499, 0)
+position = Vector2(774, -106)
 scale = Vector2(4, 4)
 texture = ExtResource("9_4sw4x")
 

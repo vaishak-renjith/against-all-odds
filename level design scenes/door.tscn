@@ -1,6 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://cdnjtj37kkahe"]
+[gd_scene load_steps=15 format=3 uid="uid://cdnjtj37kkahe"]
 
 [ext_resource type="Texture2D" uid="uid://cils888178bnv" path="res://art/golddoor/big_door.png" id="2_wnb2s"]
+[ext_resource type="Texture2D" uid="uid://20byvswg4t4a" path="res://art/interact/transparent8x8.png" id="3_4gv2d"]
 [ext_resource type="Script" path="res://scripts/door.gd" id="3_bfl58"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vgnxn"]
@@ -47,6 +48,14 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4gv2d")
+}],
+"loop": true,
+"name": &"hidden",
 "speed": 5.0
 }, {
 "frames": [{

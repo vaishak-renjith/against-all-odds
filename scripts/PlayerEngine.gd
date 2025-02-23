@@ -79,8 +79,7 @@ func _physics_process(delta):
 		var collision = get_slide_collision(i)
 		var collision_block = collision.get_collider()
 		if collision_block.is_in_group("Blocks"):
-			print("hi")
-			collision_block.apply_central_impulse(collision.get_normal() * -1.1)
+			collision_block.apply_central_impulse(collision.get_normal() * -20)
 	move_and_slide()
 
 func _on_dash_timer_timeout():

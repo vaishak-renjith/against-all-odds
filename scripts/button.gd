@@ -15,5 +15,6 @@ func _process(delta):
 func _physics_process(delta):
 	pressed = has_overlapping_bodies()
 	pair.toggled = pressed
+	#print(pair.toggled)
 	
 	

@@ -168,7 +168,7 @@ Player = NodePath("../..")
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-0.5, 0.5)
 scale = Vector2(0.25, 0.25)
-zoom = Vector2(8, 8)
+zoom = Vector2(5, 5)
 script = ExtResource("9_eh782")
 
 [node name="DashTimer" type="Timer" parent="."]

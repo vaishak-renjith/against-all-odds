@@ -1,17 +1,15 @@
+res://level3.tscn
+res://level design scenes/block.tscn
+res://player.tscn
+res://scripts/PlayerEngine.gd
 res://level1.tscn
 res://level2.tscn
-res://level3.tscn
-res://player.tscn
 res://UI.tscn
 res://textbox.tscn
 res://level design scenes/door.tscn
 res://clone.tscn
-res://scripts/PlayerEngine.gd
 res://tile_map.tscn
-res://scripts/DialogueManager.gd
-res://scripts/textbox.gd
-res://level design scenes/block.tscn
 res://level design scenes/button.tscn
-res://scripts/door.gd
 res://level design scenes/platform.tscn
-res://level design scenes/block.gd
+res://scripts/door.gd
+res://scripts/button.gd
