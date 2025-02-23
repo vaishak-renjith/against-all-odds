@@ -1,0 +1,33 @@
+[gd_scene load_steps=3 format=3 uid="uid://18obemo586pn"]
+
+[ext_resource type="FontFile" uid="uid://deb54lg2sr2tl" path="res://Silkscreen/slkscre.ttf" id="1_wxhm8"]
+[ext_resource type="Texture2D" uid="uid://c15f2b25rwr7q" path="res://art/charms/seperatecharms/charm000.png" id="2_p5mnk"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1284.0
+offset_bottom = 722.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 336.0
+offset_top = 86.0
+offset_right = 972.0
+offset_bottom = 595.0
+theme_override_fonts/font = ExtResource("1_wxhm8")
+theme_override_font_sizes/font_size = 60
+text = "CHARM GET! 
+
+
+
+
+
+
+RAINBOW CHARM"
+horizontal_alignment = 1
+
+[node name="Charm000" type="Sprite2D" parent="."]
+position = Vector2(664, 320)
+scale = Vector2(30, 30)
+texture = ExtResource("2_p5mnk")

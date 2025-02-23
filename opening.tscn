@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://b4me0g5alhf5m"]
+
+[ext_resource type="Texture2D" uid="uid://ofpjn32fkccq" path="res://title_bg.png" id="1_m5dqi"]
+[ext_resource type="Texture2D" uid="uid://b3vypg431l4p" path="res://title.png" id="2_t2q4q"]
+[ext_resource type="FontFile" uid="uid://de5v57kkiq7fi" path="res://Silkscreen/slkscrb.ttf" id="3_kffli"]
+[ext_resource type="Script" path="res://TitlePrompt.gd" id="4_os5c3"]
+
+[node name="Opening" type="Node2D"]
+position = Vector2(640, 360)
+scale = Vector2(2, 2)
+
+[node name="TitleBg" type="Sprite2D" parent="."]
+texture = ExtResource("1_m5dqi")
+
+[node name="Title" type="Sprite2D" parent="."]
+position = Vector2(12, -120)
+texture = ExtResource("2_t2q4q")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 69.0
+offset_top = 37.0
+offset_right = 286.0
+offset_bottom = 92.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("3_kffli")
+theme_override_font_sizes/font_size = 25
+text = "[Press Z to start]"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+script = ExtResource("4_os5c3")
+metadata/_edit_use_anchors_ = true

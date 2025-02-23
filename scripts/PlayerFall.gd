@@ -23,10 +23,10 @@ func Physics_Update(_delta : float):
 			Player.velocity.y = Player.JUMP_VELOCITY
 			Player.can_double_jump = false
 	
-	if not Player.is_on_floor():
-		Player.velocity.y += gravity * _delta
-	elif Input.is_key_pressed(KEY_SHIFT) && Player.can_dash:
+	if Input.is_key_pressed(KEY_SHIFT) && Player.can_dash:
 		Transitioned.emit(self, "playerdash")
+	elif not Player.is_on_floor():
+		Player.velocity.y += gravity * _delta
 	elif Player.is_on_floor():
 		Player.can_double_jump = true
 		Transitioned.emit(self, "playeridle")

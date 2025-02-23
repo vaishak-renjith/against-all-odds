@@ -11,15 +11,14 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(toggled)
 	if toggled:
 		isViewable = get_child(1).is_on_screen()
 	else:
 		isViewable = false
 	if toggled:
-		get_child(0).play("default")
+		get_child(0).modulate.a = 1
 	else:
-		get_child(0).play("hidden")
+		get_child(0).modulate.a = 0
 
 
 func _on_visible_on_screen_notifier_2d_screen_entered():

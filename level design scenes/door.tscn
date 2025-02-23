@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cdnjtj37kkahe"]
+[gd_scene load_steps=26 format=3 uid="uid://cdnjtj37kkahe"]
 
 [ext_resource type="Texture2D" uid="uid://cils888178bnv" path="res://art/golddoor/big_door.png" id="2_wnb2s"]
 [ext_resource type="Texture2D" uid="uid://20byvswg4t4a" path="res://art/interact/transparent8x8.png" id="3_4gv2d"]
@@ -7,6 +7,50 @@
 [sub_resource type="AtlasTexture" id="AtlasTexture_vgnxn"]
 atlas = ExtResource("2_wnb2s")
 region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5cwu8"]
+atlas = ExtResource("2_wnb2s")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bey60"]
+atlas = ExtResource("2_wnb2s")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbrk2"]
+atlas = ExtResource("2_wnb2s")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_djmep"]
+atlas = ExtResource("2_wnb2s")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mdsn"]
+atlas = ExtResource("2_wnb2s")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6mw3q"]
+atlas = ExtResource("2_wnb2s")
+region = Rect2(80, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kouw8"]
+atlas = ExtResource("2_wnb2s")
+region = Rect2(96, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ndu8e"]
+atlas = ExtResource("2_wnb2s")
+region = Rect2(112, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x84oc"]
+atlas = ExtResource("2_wnb2s")
+region = Rect2(128, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e8ocj"]
+atlas = ExtResource("2_wnb2s")
+region = Rect2(144, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dasuc"]
+atlas = ExtResource("2_wnb2s")
+region = Rect2(160, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0vxp4"]
 atlas = ExtResource("2_wnb2s")
@@ -60,6 +104,44 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_5cwu8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bey60")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbrk2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_djmep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3mdsn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6mw3q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kouw8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ndu8e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x84oc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e8ocj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dasuc")
+}],
+"loop": true,
+"name": &"level_win",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_0vxp4")
 }, {
 "duration": 1.0,
@@ -96,6 +178,7 @@ script = ExtResource("3_bfl58")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_riyal")
+animation = &"level_win"
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 position = Vector2(-5.96046e-07, -9.53674e-07)

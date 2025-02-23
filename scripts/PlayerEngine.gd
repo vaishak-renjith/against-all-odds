@@ -14,6 +14,10 @@ var dash_cooldown = 0.5
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity") * 0.8
 var can_double_jump = true
 
+var opening = false
+
+@export var transitionNode : Node2D
+
 const lines : Array[String] = [
 	"Hi, I'm dinger",
 	"welcome to Against All Odds",
@@ -25,17 +29,22 @@ func _input(event):
 	if Input.is_key_pressed(KEY_Z):
 		# play some animation
 		print("Z pressed")
-		if (levelWin()):
+		if (levelWin() && !opening):
+			opening = true
 			print("BEFORE ", GameManager.cur_level)
 			GameManager.cur_level = GameManager.cur_level + 1
 			print("AFTER ", GameManager.cur_level)
 			print("Level cleared!")
+			for door in get_tree().get_nodes_in_group("doors"):
+				door.get_child(0).play("level_win")
+			await get_tree().create_timer(2.0).timeout
 			if (GameManager.cur_level < 4):
 				for node in get_tree().get_nodes_in_group("clones"):
 					node.queue_free()
+				transitionNode.set_visible(true)
+				await get_tree().create_timer(1).timeout
 				get_tree().change_scene_to_file("res://level"+str(GameManager.cur_level)+".tscn")
-		
-		print(global_position.x, global_position.y)
+				opening = false
 	if Input.is_key_pressed(KEY_X):
 		DialogueManager.start_dialogue(global_position, lines)
 		
@@ -72,7 +81,7 @@ func _process(delta):
 	for door in get_tree().get_nodes_in_group("doors"):
 		if (door.isViewable):
 			doors += 1
-	get_child(6).get_child(8).get_child(0).text = str(doors) + "/" + str(get_tree().get_nodes_in_group("doors").size())
+	get_child(6).get_child(6).get_child(0).text = str(doors) + "/" + str(get_tree().get_nodes_in_group("doors").size())
 		
 func _physics_process(delta):
 	for i in get_slide_collision_count():

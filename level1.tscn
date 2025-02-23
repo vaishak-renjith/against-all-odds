@@ -1,10 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://2ypkhd55vrxf"]
+[gd_scene load_steps=9 format=3 uid="uid://2ypkhd55vrxf"]
 
 [ext_resource type="PackedScene" uid="uid://cikwbm6f8snq0" path="res://player.tscn" id="1_75uc7"]
 [ext_resource type="Texture2D" uid="uid://bb4xi1u3x6ty7" path="res://art/bgs/level0+1.png" id="2_1nadb"]
 [ext_resource type="PackedScene" uid="uid://cdnjtj37kkahe" path="res://level design scenes/door.tscn" id="3_sb1o3"]
 [ext_resource type="Texture2D" uid="uid://ceqhfddfo0c4h" path="res://art/tilesets/cloudtileset.png" id="5_chf8r"]
 [ext_resource type="Script" path="res://scripts/GameManager.gd" id="5_x41gu"]
+[ext_resource type="PackedScene" uid="uid://n6xi333qeuym" path="res://trans1.tscn" id="6_t32wq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_usrmm"]
 texture = ExtResource("5_chf8r")
@@ -114,15 +115,22 @@ sources/0 = SubResource("TileSetAtlasSource_usrmm")
 
 [node name="level1" type="Node2D"]
 
-[node name="Player" parent="." groups=["players"] instance=ExtResource("1_75uc7")]
+[node name="Player" parent="." node_paths=PackedStringArray("transitionNode") groups=["players"] instance=ExtResource("1_75uc7")]
 position = Vector2(88, 471)
 scale = Vector2(1, 1)
+transitionNode = NodePath("Node2D")
 
 [node name="Level0+1" type="Sprite2D" parent="Player"]
 z_index = -1
 position = Vector2(-1.66893e-06, 1)
 scale = Vector2(0.4, 0.4)
 texture = ExtResource("2_1nadb")
+
+[node name="Node2D" parent="Player" instance=ExtResource("6_t32wq")]
+visible = false
+z_index = 100
+position = Vector2(-129, -71)
+scale = Vector2(0.2, 0.2)
 
 [node name="Door" parent="." groups=["doors"] instance=ExtResource("3_sb1o3")]
 position = Vector2(277, 472)

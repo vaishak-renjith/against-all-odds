@@ -1,10 +1,8 @@
-[gd_scene load_steps=11 format=3 uid="uid://bvjk1dj5du4f4"]
+[gd_scene load_steps=9 format=3 uid="uid://bvjk1dj5du4f4"]
 
 [ext_resource type="Texture2D" uid="uid://c15f2b25rwr7q" path="res://art/charms/seperatecharms/charm000.png" id="1_58hlh"]
 [ext_resource type="Texture2D" uid="uid://d0oxpb2ki3r6m" path="res://art/charms/seperatecharms/charm001.png" id="2_3vitp"]
 [ext_resource type="Texture2D" uid="uid://cxbyqcs3andls" path="res://art/charms/seperatecharms/charm002.png" id="3_4wihl"]
-[ext_resource type="Texture2D" uid="uid://dnm67bnjcqeph" path="res://art/charms/seperatecharms/charm003.png" id="4_7jbgx"]
-[ext_resource type="Texture2D" uid="uid://gypuyjerwuu7" path="res://art/charms/seperatecharms/charm004.png" id="5_jvlp3"]
 [ext_resource type="Texture2D" uid="uid://dkn3x1elioh7" path="res://art/charms/seperatecharms/charm005.png" id="6_7vmen"]
 [ext_resource type="Texture2D" uid="uid://n5tyxjytgepl" path="res://art/charms/seperatecharms/charm006.png" id="7_o16ts"]
 [ext_resource type="Texture2D" uid="uid://bg3yhv3dexvhg" path="res://art/charms/seperatecharms/charm007.png" id="8_2rem1"]
@@ -12,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://bv1m5memacnfj" path="res://Silkscreen/slkscr.ttf" id="10_wyjko"]
 
 [node name="Node2D" type="Node2D"]
+z_index = 10
 position = Vector2(-430, 0)
 
 [node name="charm1" type="Sprite2D" parent="."]
@@ -29,28 +28,18 @@ position = Vector2(-318, -106)
 scale = Vector2(4, 4)
 texture = ExtResource("3_4wihl")
 
-[node name="charm4" type="Sprite2D" parent="."]
-position = Vector2(-180, -106)
-scale = Vector2(4, 4)
-texture = ExtResource("4_7jbgx")
-
-[node name="charm5" type="Sprite2D" parent="."]
-position = Vector2(-216, -106)
-scale = Vector2(4, 4)
-texture = ExtResource("5_jvlp3")
-
 [node name="charm6" type="Sprite2D" parent="."]
-position = Vector2(-283, -106)
+position = Vector2(-250, -106)
 scale = Vector2(4, 4)
 texture = ExtResource("6_7vmen")
 
 [node name="charm7" type="Sprite2D" parent="."]
-position = Vector2(-250, -106)
+position = Vector2(-284, -106)
 scale = Vector2(4, 4)
 texture = ExtResource("7_o16ts")
 
 [node name="charm8" type="Sprite2D" parent="."]
-position = Vector2(-144, -106)
+position = Vector2(-216, -106)
 scale = Vector2(4, 4)
 texture = ExtResource("8_2rem1")
 

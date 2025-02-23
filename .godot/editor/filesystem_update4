@@ -13,3 +13,18 @@ res://level design scenes/button.tscn
 res://level design scenes/platform.tscn
 res://scripts/door.gd
 res://scripts/button.gd
+res://TitlePrompt.gd
+res://opening.tscn
+res://transition.gdshader
+res://trans1.tscn
+res://control.tscn
+res://control.gdshader
+res://control.gd
+res://scripts/GameManager.gd
+res://trans0.tscn
+res://trans2.tscn
+res://trans3.tscn
+res://trans4.tscn
+res://level4.tscn
+res://scripts/StateMachine.gd
+res://scripts/PlayerFall.gd
